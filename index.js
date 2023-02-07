@@ -8,7 +8,7 @@ const {allowInsecurePrototypeAccess}=require('@handlebars/allow-prototype-access
 const bodyparser=require('body-parser')
 const { extname } = require('path')
 
-const studentController=require('./Controllers/studentControllers')
+const studentController=require('./Controllers/studentController')
 
 var app=express()
 
@@ -22,7 +22,7 @@ app.get("/", (req,res)=>{
 app.set('views',path.join(__dirname,'/views/'))
 
 app.engine('hbs',
-   exphbs({
+   exphbs ({
     handlebars:allowInsecurePrototypeAccess(handlebars),
     extname:'hbs',
     defaultLayout:'MainLayout',
